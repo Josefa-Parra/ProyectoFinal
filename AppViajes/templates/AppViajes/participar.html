@@ -1,0 +1,49 @@
+{% extends 'AppViajes/index.html' %}
+
+
+{% block titulo %}
+<h1 class="site-heading text-center text-faded d-none d-lg-block">
+    <span class="site-heading-upper text-primary mb-3">Unete a Nuestra Comunidad</span>
+    <span class="site-heading-lower">¡Participa de esta experiencia!</span>
+</h1>
+{% endblock titulo %}
+
+
+{% block contenido %}
+</section>
+<section class="page-section cta">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 mx-auto">
+                <div class="cta-inner bg-faded text-center rounded">
+                    <h2 class="section-heading mb-4">
+                        <span class="section-heading-upper">Busca una nueva aventura</span>
+                    </h2>
+                    <p class="mb-0"></p>
+                </div>
+            </div>
+        </div>
+    </div> 
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Codigo Viaje</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+        </tr>
+        <tbody>
+        {% for c in participar %}
+           <tr>
+               <td>{{ c.id }}</td>
+               <td>{{ c.codigo_viaje }}</td>
+               <td>{{ c.nombre }}</td>
+               <td>{{ c.apellido }}</td>
+               <td>{{ c.email }}</td>
+           </tr>
+        {% endfor %}
+        </tbody>
+</table> 
+{% endblock contenido %}
+    
