@@ -23,26 +23,13 @@
             </div>
         </div>
     </div>  
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Email</th>
-            <th>Ciudad</th>
-        </tr>
-        <tbody>
-        {% for c in registrarse %}
-           <tr>
-               <td>{{ c.id }}</td>
-               <td>{{ c.nombre }}</td>
-               <td>{{ c.apellido }}</td>
-               <td>{{ c.email }}</td>
-               <td>{{ c.ciudad }}</td>
-           </tr>
-        {% endfor %}
-        </tbody>
-</table>
+
+<form action="" method="post">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    <input type="submit" value="Registrarse">
+</form>
+
 {% endblock contenido %}
-    

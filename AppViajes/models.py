@@ -6,8 +6,11 @@ class Registrarse(models.Model):
     email= models.EmailField()
     ciudad= models.CharField(max_length=40)
 
+    class Meta:
+        ordering = ["apellido","nombre"]
+
     def __str__(self):
-        return f"{self.nombre}"
+        return f"{self.apellido}, {self.nombre}"
                                                       
 class Crear_Viaje(models.Model):
     nombre_tutor= models.CharField(max_length=40)
@@ -16,9 +19,12 @@ class Crear_Viaje(models.Model):
     hora= models.CharField(max_length=40)
     ciudad= models.CharField(max_length=40)
     codigo_viaje= models.CharField(max_length=40)
-    
+
+    class Meta:
+        ordering = ["codigo_viaje","nombre_tutor"]
+
     def __str__(self):
-        return f"{self.nombre_tutor},{self.codigo_viaje}"
+        return f"{self.codigo_viaje}, {self.nombre_tutor}"
     
 class Participar(models.Model):
     codigo_viaje= models.CharField(max_length=40)
@@ -29,6 +35,7 @@ class Participar(models.Model):
     class Meta:
         verbose_name ="Participar"
         verbose_name_plural ="Participantes"
+        ordering = ["codigo_viaje","apellido","nombre"]
 
     def __str__(self):
-        return f"{self.apellido},{self.codigo_viaje}"
+        return f"{self.codigo_viaje}, {self.apellido}, {self.nombre}"
