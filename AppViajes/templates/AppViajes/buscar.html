@@ -3,7 +3,7 @@
 
 {% block titulo %}
 <h1 class="site-heading text-center text-faded d-none d-lg-block">
-    <span class="site-heading-lower">Creando Experiencias</span>
+    <span class="site-heading-lower">Buscar Viajes</span>
 </h1>
 {% endblock titulo %}
 
@@ -16,7 +16,7 @@
             <div class="col-xl-9 mx-auto">
                 <div class="cta-inner bg-faded text-center rounded">
                     <h2 class="section-heading mb-4">
-                        <span class="section-heading-upper">Crear un nuevo viaje grupal</span>
+                        <span class="section-heading-upper">Busca todos los viajes disponibles en tu ciudad</span>
                     </h2>
                     <p class="mb-0"></p>
                 </div>
@@ -24,12 +24,12 @@
         </div>
     </div>  
 
-<form action="" method="post">
+<form action="{% url 'encontrarViajes' %}" method="get">
     {% csrf_token %}
     <table>
-        {{ form.as_table }}
+        <p>Ingresar busqueda: <input type="text" name="buscar" id="buscar"></p>
     </table>
-    <input type="submit" value="crear viaje">
+    <input type="submit" value="Buscar">
 </form>
 
 {% endblock contenido %}

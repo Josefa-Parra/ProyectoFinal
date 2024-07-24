@@ -11,4 +11,8 @@ urlpatterns = [
     path('registrarseForm/',registrarse_Form, name="registrarseForm"),
     path('crear_viajeForm/',crear_viaje_Form, name="crear_viajeForm"),
     path('participarForm/',participar_Form, name="participarForm"),
+
+    path('buscarViajes/',buscarViajes, name="buscarViajes"),
+    path('encontrarViajes/',encontrarViajes, name="encontrarViajes"),
+
     ]
