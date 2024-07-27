@@ -6,7 +6,7 @@ class registrarseForm(forms.Form):
     email= forms.EmailField(required=True)
     ciudad= forms.CharField(max_length=40,required=True)
 
-class crear_viajeForm(forms.Form):
+class viajeForm(forms.Form):
     nombre_tutor= forms.CharField(max_length=40,required=True, label="Nombre de Tutor")
     lugar= forms.CharField(max_length=40,required=True)
     dia= forms.DateField(required=True)

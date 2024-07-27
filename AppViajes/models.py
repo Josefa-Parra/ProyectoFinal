@@ -12,7 +12,7 @@ class Registrarse(models.Model):
     def __str__(self):
         return f"{self.apellido}, {self.nombre}"
                                                       
-class Crear_Viaje(models.Model):
+class Viaje(models.Model):
     nombre_tutor= models.CharField(max_length=40)
     lugar= models.CharField(max_length=40)
     dia= models.DateField()

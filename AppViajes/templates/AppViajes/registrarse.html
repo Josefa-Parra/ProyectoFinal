@@ -9,6 +9,20 @@
 
 
 {% block contenido %}
+
+<table>
+    <tr>
+        <td width="200"><h2>Registrarse</h2></td>
+        <td>
+            <a
+            href="{% url 'registrarseForm' %}"
+            class="btn btn-primary btn-sm"
+            ><i class="fa fa-plus fa-lg" title="Crear"> </i>
+            </a>
+        </td>        
+    </tr>
+</table>
+
 <table class="table table-striped">
     <thead>
         <tr>
@@ -26,6 +40,8 @@
                <td>{{ c.apellido }}</td>
                <td>{{ c.email }}</td>
                <td>{{ c.ciudad }}</td>
+               <td>              
+                </td>
            </tr>
         {% endfor %}
         </tbody>

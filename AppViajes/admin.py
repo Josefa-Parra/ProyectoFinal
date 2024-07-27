@@ -7,7 +7,7 @@ class RegistrarseAdmin(admin.ModelAdmin):
     list_display= ("nombre","apellido","email","ciudad")
     list_filter= ("nombre",)
 
-class Crear_ViajeAdmin(admin.ModelAdmin):
+class ViajeAdmin(admin.ModelAdmin):
     list_display= ("nombre_tutor","lugar","dia","hora","ciudad","codigo_viaje")
     list_filter= ("nombre_tutor",)
 
@@ -16,5 +16,5 @@ class ParticiparAdmin(admin.ModelAdmin):
     list_filter= ("codigo_viaje",)
 
 admin.site.register(Registrarse,RegistrarseAdmin)
-admin.site.register(Crear_Viaje,Crear_ViajeAdmin)
+admin.site.register(Viaje,ViajeAdmin)
 admin.site.register(Participar,ParticiparAdmin)

@@ -3,7 +3,7 @@
 
 {% block titulo %}
 <h1 class="site-heading text-center text-faded d-none d-lg-block">
-    <span class="site-heading-lower">¡Participantes!</span>
+    <span class="site-heading-lower">Viajes Disponibles</span>
 </h1>
 {% endblock titulo %}
 
@@ -12,10 +12,10 @@
 
 <table>
     <tr>
-        <td width="200"><h2>Participar</h2></td>
+        <td width="200"><h2>Crear Viaje</h2></td>
         <td>
             <a
-            href="{% url 'participarForm' %}"
+            href="{% url 'viajeForm' %}"
             class="btn btn-primary btn-sm"
             ><i class="fa fa-plus fa-lg" title="Crear"> </i>
             </a>
@@ -27,32 +27,36 @@
     <thead>
         <tr>
             <th>Id</th>
+            <th>Nombre Tutor</th>
+            <th>Lugar</th>
+            <th>Día</th>
+            <th>Hora</th>
+            <th>Ciudad</th>
             <th>Codigo Viaje</th>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Email</th>
             <th>Acciones</th>
         </tr>
         <tbody>
-        {% for c in participar %}
+        {% for c in viaje %}
            <tr>
                <td>{{ c.id }}</td>
+               <td>{{ c.nombre_tutor }}</td>
+               <td>{{ c.lugar }}</td>
+               <td>{{ c.dia }}</td>
+               <td>{{ c.hora }}</td>
+               <td>{{ c.ciudad }}</td>
                <td>{{ c.codigo_viaje }}</td>
-               <td>{{ c.nombre }}</td>
-               <td>{{ c.apellido }}</td>
-               <td>{{ c.email }}</td>
                <td>
-                    <a
-                      href="{% url 'participarUpdate' c.id %}"
+                     <a
+                      href="{% url 'viajeUpdate' c.id %}"
                       class="btn btn-primary"
                       style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
                       ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
                     </a>
                     <a
-                      href="{% url 'participarDelete' c.id %}"
-                      class="btn btn-danger"
-                      style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
-                      ><i class="fa fa-trash fa-sm" title="Delete Record"></i>
+                       href="{% url 'viajeDelete' c.id %}"
+                       class="btn btn-danger"
+                       style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                       ><i class="fa fa-trash fa-sm" title="Delete Record"></i>
                     </a>                
                 </td>
            </tr>
@@ -60,4 +64,3 @@
         </tbody>
 </table> 
 {% endblock contenido %}
-    
