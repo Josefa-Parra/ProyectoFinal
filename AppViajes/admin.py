@@ -3,8 +3,8 @@ from django.contrib import admin
 # Register your models here.
 from .models import *
 
-class RegistrarseAdmin(admin.ModelAdmin):
-    list_display= ("nombre","apellido","email","ciudad")
+class ExperienciaAdmin(admin.ModelAdmin):
+    list_display= ("nombre","apellido","ciudad","comentario")
     list_filter= ("nombre",)
 
 class ViajeAdmin(admin.ModelAdmin):
@@ -15,6 +15,6 @@ class ParticiparAdmin(admin.ModelAdmin):
     list_display= ("codigo_viaje","nombre","apellido","email")
     list_filter= ("codigo_viaje",)
 
-admin.site.register(Registrarse,RegistrarseAdmin)
+admin.site.register(Experiencia,ExperienciaAdmin)
 admin.site.register(Viaje,ViajeAdmin)
 admin.site.register(Participar,ParticiparAdmin)

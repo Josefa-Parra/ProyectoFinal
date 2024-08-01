@@ -1,10 +1,10 @@
 from django.db import models
 
-class Registrarse(models.Model):
+class Experiencia(models.Model):
     nombre= models.CharField(max_length=40)
     apellido= models.CharField(max_length=40)
-    email= models.EmailField()
     ciudad= models.CharField(max_length=40)
+    comentario= models.CharField(max_length=200)
 
     class Meta:
         ordering = ["apellido","nombre"]

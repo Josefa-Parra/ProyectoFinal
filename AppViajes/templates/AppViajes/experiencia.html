@@ -12,12 +12,12 @@
 
 <table>
     <tr>
-        <td width="200"><h2>Registrarse</h2></td>
+        <td width="200"><h2>¡Tu Experiencia!</h2></td>
         <td>
             <a
-            href="{% url 'registrarseForm' %}"
+            href="{% url 'experienciaForm' %}"
             class="btn btn-primary btn-sm"
-            ><i class="fa fa-plus fa-lg" title="Crear"> </i>
+            ><i class="fa fa-plus fa-lg" title="Enviar"> </i>
             </a>
         </td>        
     </tr>
@@ -29,17 +29,17 @@
             <th>Id</th>
             <th>Nombre</th>
             <th>Apellido</th>
-            <th>Email</th>
             <th>Ciudad</th>
+            <th>Comentario</th>
         </tr>
         <tbody>
-        {% for c in registrarse %}
+        {% for c in experiencia %}
            <tr>
                <td>{{ c.id }}</td>
                <td>{{ c.nombre }}</td>
                <td>{{ c.apellido }}</td>
-               <td>{{ c.email }}</td>
                <td>{{ c.ciudad }}</td>
+               <td>{{ c.comentario }}</td>
                <td>              
                 </td>
            </tr>
